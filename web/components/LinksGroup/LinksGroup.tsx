@@ -50,7 +50,7 @@ const Label = ({
   </Group>
 );
 
-export function LinksGroup({ icon: Icon, tkey, links, href, ...props }: LinksGroupProps) {
+export const LinksGroup = ({ icon: Icon, tkey, links, href, ...props }: LinksGroupProps) => {
   const t = useTranslations(tkey);
 
   const pathname = usePathname();
@@ -110,4 +110,4 @@ export function LinksGroup({ icon: Icon, tkey, links, href, ...props }: LinksGro
       </Collapse>
     </>
   );
-}
+};
