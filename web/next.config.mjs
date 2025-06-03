@@ -20,7 +20,7 @@ const config = {
   env: {
     BUILD_DATE: new Date().toISOString(),
     BUILD_GITHUB_SHA: process.env.GITHUB_SHA,
-  }
+  },
 };
 
 export default withBundleAnalyzer(

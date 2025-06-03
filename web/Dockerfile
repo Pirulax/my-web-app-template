@@ -20,8 +20,10 @@ RUN corepack enable && corepack prepare yarn@${YARN_VERSION}
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-# Install dependencies only when needed
-FROM base AS builder
+#
+# Install dependencies
+#
+FROM base AS deps
 WORKDIR /app
 
 COPY . .
@@ -29,27 +31,47 @@ COPY package.json yarn.lock .yarnrc.yml ./
 COPY .yarn ./.yarn
 RUN yarn install --immutable
 
-# Add `ARG` instructions below if you need `NEXT_PUBLIC_` variables
-# then put the value on your fly.toml
-# Example:
-# ARG NEXT_PUBLIC_SOMETHING
+# Build the app in standalone mode (This must be set in `next.config.js`!)
+# This will create a .next/standalone folder with the server.js file and all the dependencies
+FROM deps AS build
+WORKDIR /app
 
-# Build the app (in standalone mode based on next.config.js)
+COPY --from=deps ./app .
+
 RUN yarn build
 
-# Production image, copy all the files and run next
-FROM base AS runner
+#
+# Production image
+#
+# This will copy the .next/standalone folder and the public folder to the final image
+# and run the server.js file
+FROM build AS prod
 WORKDIR /app
 
 # copy the public folder from the project as this is not included in the build process
-COPY --from=builder --chown=nextjs:nodejs /app/public ./public
+COPY --from=build --chown=nextjs:nodejs /app/public ./public
 # copy the standalone folder inside the .next folder generated from the build process
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=build --chown=nextjs:nodejs /app/.next/standalone ./
 # copy the static folder inside the .next folder generated from the build process
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+COPY --from=build --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 USER nextjs
 
 EXPOSE 3000
 
 CMD ["node","server.js"]
+
+#
+# Development image
+#
+FROM deps AS dev
+WORKDIR /app
+
+# Copy data from the deps stage
+COPY --from=deps --chown=nextjs:nodejs /app .
+
+USER nextjs
+
+EXPOSE 3000
+
+CMD ["yarn", "dev"]

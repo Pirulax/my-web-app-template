@@ -1,0 +1,5 @@
+services:
+  web:
+    image: 'ghcr.io/pirulax/my-web-app-template:latest'
+    environment:
+      - NODE_ENV=production
