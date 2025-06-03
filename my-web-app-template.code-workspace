@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "name": "project",
+      "path": "."
+    },
+    {
+      "name": "web",
+      "path": "./web"
+    }
+  ],
+  "settings": {
+    "files.associations": {
+      "**/docker-compose/*.*": "dockercompose"
+    }
+  }
+}

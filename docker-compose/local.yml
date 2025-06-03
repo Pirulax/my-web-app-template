@@ -1,0 +1,21 @@
+# Local development configuration for Docker Compose
+# It should be merge onto `base.yml`
+
+services:
+  web:
+    build:
+      context: ../web
+      dockerfile: Dockerfile
+      target: ${BUILD_TARGET}
+    volumes:
+      - /app/node_modules
+      - /app/.next
+    develop:
+      watch:
+        - action: sync
+          path: ../web
+          target: /app
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: package.json

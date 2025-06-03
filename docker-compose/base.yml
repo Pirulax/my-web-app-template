@@ -1,10 +1,7 @@
-services:
   web:
     init: true
-    image: 'ghcr.io/pirulax/my-web-app:latest'
     restart: unless-stopped
     ports:
-      - 4000:3000
+      - 3000:3000
     environment:
-      - AUTH_TRUST_HOST
       - GOOGLE_ANALYTICS_ID

@@ -1,0 +1,6 @@
+# Deployment configuration for Docker Compose
+# It should be merge onto `base.yml`
+
+services:
+  web:
+    image: 'ghcr.io/pirulax/my-web-app-template:latest'
