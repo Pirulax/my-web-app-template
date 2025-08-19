@@ -1,7 +1,7 @@
 # syntax = docker/dockerfile:1
 # Source: https://calvinf.com/blog/2023/11/10/node-js-20-yarn-4-and-next-js-on-docker/
 
-FROM node:23-alpine AS base
+FROM node:24-alpine AS base
 
 ARG GITHUB_SHA
 ENV GITHUB_SHA=${GITHUB_SHA}
