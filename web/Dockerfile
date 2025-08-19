@@ -6,7 +6,6 @@ FROM node:23-alpine AS base
 ARG GITHUB_SHA
 ENV GITHUB_SHA=${GITHUB_SHA}
 
-ENV NODE_ENV=production
 ENV YARN_VERSION=4.2.2
 #ENV NEXT_TELEMETRY_DISABLED=1
 
@@ -56,9 +55,7 @@ COPY --from=build --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=build --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 USER nextjs
-
 EXPOSE 3000
-
 CMD ["node","server.js"]
 
 #
@@ -67,11 +64,16 @@ CMD ["node","server.js"]
 FROM deps AS dev
 WORKDIR /app
 
+# Work dir must be owned by the nextjs user,
+# because otherwise next can't create `.next` folder
+RUN chown nextjs:nodejs .
+
+# Copy repo data
+COPY --chown=nextjs:nodejs . .
+
 # Copy data from the deps stage
-COPY --from=deps --chown=nextjs:nodejs /app .
+COPY --from=deps --chown=nextjs:nodejs /app ./
 
 USER nextjs
-
 EXPOSE 3000
-
 CMD ["yarn", "dev"]
