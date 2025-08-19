@@ -9,7 +9,6 @@ services:
       target: ${BUILD_TARGET}
     volumes:
       - /app/node_modules
-      - /app/.next
     develop:
       watch:
         - action: sync
@@ -18,4 +17,4 @@ services:
           ignore:
             - node_modules/
         - action: rebuild
-          path: package.json
+          path: ../web/package.json
