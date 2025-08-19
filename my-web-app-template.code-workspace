@@ -12,6 +12,8 @@
   "settings": {
     "files.associations": {
       "**/docker-compose/*.*": "dockercompose"
-    }
+    },
+    /** Use LF instead of CRLF */
+    "files.eol": "\n"
   }
 }
