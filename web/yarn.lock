@@ -3459,9 +3459,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/core@npm:8.0.2":
-  version: 8.0.2
-  resolution: "@mantine/core@npm:8.0.2"
+"@mantine/core@npm:8.2.5":
+  version: 8.2.5
+  resolution: "@mantine/core@npm:8.2.5"
   dependencies:
     "@floating-ui/react": "npm:^0.26.28"
     clsx: "npm:^2.1.1"
@@ -3470,43 +3470,43 @@ __metadata:
     react-textarea-autosize: "npm:8.5.9"
     type-fest: "npm:^4.27.0"
   peerDependencies:
-    "@mantine/hooks": 8.0.2
+    "@mantine/hooks": 8.2.5
     react: ^18.x || ^19.x
     react-dom: ^18.x || ^19.x
-  checksum: 10c0/10ca6258bcc4e475fbb213724ad6e654396434d7345a315c60880c7fc639ffaa5b42b85d3e768364fcb869042357a52cfd6532dfc6daf1b5ba5370a9ca15936d
+  checksum: 10c0/2268218faa02ecfb07819f6fb73426bf32049a3769ee6b1d1be46bdd3fb913ff14518692213a762a1ceccf6245572a5600052572f50b02c201e388475427657a
   languageName: node
   linkType: hard
 
-"@mantine/hooks@npm:8.0.2":
-  version: 8.0.2
-  resolution: "@mantine/hooks@npm:8.0.2"
+"@mantine/hooks@npm:8.2.5":
+  version: 8.2.5
+  resolution: "@mantine/hooks@npm:8.2.5"
   peerDependencies:
     react: ^18.x || ^19.x
-  checksum: 10c0/1c68325ee0093923c7bbbde7f1b39600ae72751f254bd336989afe50d08a9c14810465ddfdb62e261e83711d334c292d6ac789a546a8df0e14a2f4f51812efda
+  checksum: 10c0/acd6d56703b19032ecced897c26dfb5ee7ff630c51cccfcaa2a9fa3251607432be0e984c8f8715456b4fa0c6647d48b4c240aa72d5eed78dbc358ec445b1f791
   languageName: node
   linkType: hard
 
-"@mantine/notifications@npm:^8.0.2":
-  version: 8.0.2
-  resolution: "@mantine/notifications@npm:8.0.2"
+"@mantine/notifications@npm:^8.2.5":
+  version: 8.2.5
+  resolution: "@mantine/notifications@npm:8.2.5"
   dependencies:
-    "@mantine/store": "npm:8.0.2"
+    "@mantine/store": "npm:8.2.5"
     react-transition-group: "npm:4.4.5"
   peerDependencies:
-    "@mantine/core": 8.0.2
-    "@mantine/hooks": 8.0.2
+    "@mantine/core": 8.2.5
+    "@mantine/hooks": 8.2.5
     react: ^18.x || ^19.x
     react-dom: ^18.x || ^19.x
-  checksum: 10c0/5fc0b0fbf8730c47f92359a091575c2c2ef3e7a100c67a2641c26da2821d35f8e2c935ca9bc976db74188c0c3333c79ac84f178a7f2fd0c6d7e14e2b1d463db3
+  checksum: 10c0/35258c07457c587d7f81817e855cd3ac7c167bee53478f10e36a9b46248cbb924b73462b76491301f63de6df40be99e79386e60ae03e6b4c62b8ea7b038440a5
   languageName: node
   linkType: hard
 
-"@mantine/store@npm:8.0.2":
-  version: 8.0.2
-  resolution: "@mantine/store@npm:8.0.2"
+"@mantine/store@npm:8.2.5":
+  version: 8.2.5
+  resolution: "@mantine/store@npm:8.2.5"
   peerDependencies:
     react: ^18.x || ^19.x
-  checksum: 10c0/fb674950999f030ad9e3545ad4322abe4245b6e05818343a30da0efe45aebcf7077bb0eaea0b7c52d6a335d0b474e7a461528b8d1a9ba97165f0b2b852f27de4
+  checksum: 10c0/efd5568d5a3e0d9e34b3b902f3ca0dfbdaffb1ec95d1b0e41e2ac39d54d2bc48079d5cc5d24593b140a36ed1d0095756863ab997f504b3d92ac348b82d2c3f43
   languageName: node
   linkType: hard
 
@@ -10865,9 +10865,9 @@ __metadata:
     "@babel/core": "npm:^7.28.3"
     "@eslint/js": "npm:^9.33.0"
     "@ianvs/prettier-plugin-sort-imports": "npm:^4.6.2"
-    "@mantine/core": "npm:8.0.2"
-    "@mantine/hooks": "npm:8.0.2"
-    "@mantine/notifications": "npm:^8.0.2"
+    "@mantine/core": "npm:8.2.5"
+    "@mantine/hooks": "npm:8.2.5"
+    "@mantine/notifications": "npm:^8.2.5"
     "@next/bundle-analyzer": "npm:^15.4.7"
     "@next/third-parties": "npm:15.4.7"
     "@storybook/nextjs": "npm:^9.1.2"
