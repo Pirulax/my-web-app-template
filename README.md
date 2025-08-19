@@ -11,6 +11,9 @@ Create the appropriate `.env` files in the project root, eg.:
 - `.env.dev.local`
 - `.env.prod.local`
 
+#### Compose files
+- Find & replace all instances of `my-web-app-template` to your project's name
+
 ### Setup Portainer environment
 This template is meant to be used with Portainer to allow for CD (continous deployment)
 So, first of all, the repo must be imported:
@@ -21,4 +24,4 @@ So, first of all, the repo must be imported:
 
 ### Set up CI/CD
 To properly setup ci/cd you must:
-- Change the image names from `my-web-app-template` to your app's name in `.github/workflows/docker-ci.yml` and in `docker-compose/deployment.yml`
+- Make sure `image` in `docker-compose/base.yml` (and others) is correct, eg.: change `ghcr.io/pirulax/my-web-app-template-web:latest` to `ghcr.io/your-name/my-awesome-app-web:latest`

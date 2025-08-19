@@ -1,3 +1,6 @@
+name: my-web-app-template
+
+services:
   web:
     init: true
     restart: unless-stopped

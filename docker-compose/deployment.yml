@@ -3,4 +3,4 @@
 
 services:
   web:
-    image: 'ghcr.io/pirulax/my-web-app-template:latest'
+    image: 'ghcr.io/pirulax/my-web-app-template-web:latest'
