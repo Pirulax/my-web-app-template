@@ -1,19 +1,16 @@
 # syntax = docker/dockerfile:1
 # Source: https://calvinf.com/blog/2023/11/10/node-js-20-yarn-4-and-next-js-on-docker/
 
-FROM node:24-alpine AS base
+FROM node:23-alpine AS base
 
 ARG GITHUB_SHA
 ENV GITHUB_SHA=${GITHUB_SHA}
 
-ENV YARN_VERSION=4.9.2
 #ENV NEXT_TELEMETRY_DISABLED=1
 
 # update dependencies, add libc6-compat
 RUN apk update && apk upgrade && apk add --no-cache libc6-compat
 
-# install and use yarn 4.x
-RUN corepack enable && corepack prepare yarn@${YARN_VERSION}
 
 # add the user and group we'll need in our final image
 RUN addgroup --system --gid 1001 nodejs
@@ -25,9 +22,9 @@ RUN adduser --system --uid 1001 nextjs
 FROM base AS deps
 WORKDIR /app
 
-COPY . .
 COPY package.json yarn.lock .yarnrc.yml ./
-COPY .yarn ./.yarn
+RUN corepack enable && corepack prepare
+
 RUN yarn install --immutable
 
 # Build the app in standalone mode (This must be set in `next.config.js`!)
@@ -35,6 +32,7 @@ RUN yarn install --immutable
 FROM deps AS build
 WORKDIR /app
 
+COPY . .
 COPY --from=deps ./app .
 
 RUN yarn build
@@ -74,6 +72,9 @@ COPY --chown=nextjs:nodejs . .
 # Copy data from the deps stage
 COPY --from=deps --chown=nextjs:nodejs /app ./
 
+
 USER nextjs
 EXPOSE 3000
+RUN corepack enable && corepack prepare
+#CMD ["sleep", "300"]
 CMD ["yarn", "dev"]
