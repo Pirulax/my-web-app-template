@@ -6,7 +6,7 @@ FROM node:24-alpine AS base
 ARG GITHUB_SHA
 ENV GITHUB_SHA=${GITHUB_SHA}
 
-ENV YARN_VERSION=4.2.2
+ENV YARN_VERSION=4.9.2
 #ENV NEXT_TELEMETRY_DISABLED=1
 
 # update dependencies, add libc6-compat
