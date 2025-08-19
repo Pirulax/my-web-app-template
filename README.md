@@ -1,3 +1,9 @@
+### Setup
+Include the `.gitconfig` file to your git config (Run in project root directory):
+```sh
+git config --local include.path ../.gitconfig
+```
+
 ### Setup Portainer environment
 This template is meant to be used with Portainer to allow for CD (continous deployment)
 So, first of all, the repo must be imported:
