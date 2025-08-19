@@ -3770,6 +3770,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@storybook-community/storybook-dark-mode@npm:^5.6.0":
+  version: 5.6.0
+  resolution: "@storybook-community/storybook-dark-mode@npm:5.6.0"
+  dependencies:
+    "@storybook/icons": "npm:^1.4.0"
+    fast-deep-equal: "npm:^3.1.3"
+  peerDependencies:
+    storybook: ^9.0.18
+  checksum: 10c0/d68f2449c72d800e070df96b0cb4d1acf9112d6d20d0dc5ce93dbec1b6f12b751cc05e2518f43186dc01365635833587c7cc83a8c2b6985c9ff97889703befdd
+  languageName: node
+  linkType: hard
+
 "@storybook/builder-webpack5@npm:9.1.2":
   version: 9.1.2
   resolution: "@storybook/builder-webpack5@npm:9.1.2"
@@ -10913,6 +10925,7 @@ __metadata:
     "@mantine/notifications": "npm:^8.2.5"
     "@next/bundle-analyzer": "npm:^15.4.7"
     "@next/third-parties": "npm:15.4.7"
+    "@storybook-community/storybook-dark-mode": "npm:^5.6.0"
     "@storybook/nextjs": "npm:^9.1.2"
     "@storybook/react": "npm:^9.1.2"
     "@tabler/icons-react": "npm:^3.34.1"
@@ -10942,7 +10955,6 @@ __metadata:
     react: "npm:19.1.1"
     react-dom: "npm:19.1.1"
     storybook: "npm:^9.1.2"
-    storybook-dark-mode2: "npm:^5.4.0"
     storybook-next-intl: "npm:^2.0.13"
     stylelint: "npm:^16.23.1"
     stylelint-config-standard-scss: "npm:^15.0.1"
@@ -13304,18 +13316,6 @@ __metadata:
   version: 1.3.4
   resolution: "stackframe@npm:1.3.4"
   checksum: 10c0/18410f7a1e0c5d211a4effa83bdbf24adbe8faa8c34db52e1cd3e89837518c592be60b60d8b7270ac53eeeb8b807cd11b399a41667f6c9abb41059c3ccc8a989
-  languageName: node
-  linkType: hard
-
-"storybook-dark-mode2@npm:^5.4.0":
-  version: 5.4.0
-  resolution: "storybook-dark-mode2@npm:5.4.0"
-  dependencies:
-    "@storybook/icons": "npm:^1.4.0"
-    fast-deep-equal: "npm:^3.1.3"
-  peerDependencies:
-    storybook: ^9.0.0
-  checksum: 10c0/548ef870a2210b3bc597ed1b139816a674072f551df2a979af0677c47bd2b74a48c098fc30d50838b35a26afb1d25ffab3be60946805faf1eed8ca7827edde02
   languageName: node
   linkType: hard
 

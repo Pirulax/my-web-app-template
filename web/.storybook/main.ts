@@ -8,7 +8,7 @@ const config: StorybookConfig = {
   },
   stories: ['../components/**/*.(stories|story).@(js|jsx|ts|tsx)'],
   addons: [
-    'storybook-dark-mode2',
+    '@storybook-community/storybook-dark-mode',
     'storybook-next-intl'
   ],
   framework: {
