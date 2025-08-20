@@ -76,5 +76,4 @@ COPY --from=deps --chown=nextjs:nodejs /app ./
 USER nextjs
 EXPOSE 3000
 RUN corepack enable && corepack prepare
-#CMD ["sleep", "300"]
 CMD ["yarn", "dev"]
