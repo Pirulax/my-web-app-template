@@ -1,14 +1,15 @@
 import { Combobox, ComboboxProps, UnstyledButton, useCombobox } from '@mantine/core';
 import { ReactNode } from 'react';
 
-export interface ButtonSelectProps<T,> extends ComboboxProps {
+export interface ButtonSelectProps<T,> extends Omit<ComboboxProps, 'store' | 'onOptionSubmit'> {
   onSelect: (item: T) => void;
   title: ReactNode;
   getItemId: (item: T) => string;
   items: T[];
   autoClose?: boolean;
   children: ReactNode[]; // Should return ReactNodes that have `Combobox.Option` in it, with value being equal to `getItemId(...)`
-}
+};
+
 export function ButtonSelect<T,>({
   items,
   title,
@@ -27,9 +28,9 @@ export function ButtonSelect<T,>({
   });
   return (
     <Combobox
+      withinPortal={false}
       {...props}
       store={combobox}
-      withinPortal={false}
       onOptionSubmit={(id) => {
         const item = items.find((i) => getItemId(i) === id)!;
         onSelect(item);
