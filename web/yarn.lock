@@ -3483,9 +3483,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/core@npm:8.2.5":
-  version: 8.2.5
-  resolution: "@mantine/core@npm:8.2.5"
+"@mantine/core@npm:8.2.8":
+  version: 8.2.8
+  resolution: "@mantine/core@npm:8.2.8"
   dependencies:
     "@floating-ui/react": "npm:^0.26.28"
     clsx: "npm:^2.1.1"
@@ -3494,10 +3494,10 @@ __metadata:
     react-textarea-autosize: "npm:8.5.9"
     type-fest: "npm:^4.27.0"
   peerDependencies:
-    "@mantine/hooks": 8.2.5
+    "@mantine/hooks": 8.2.8
     react: ^18.x || ^19.x
     react-dom: ^18.x || ^19.x
-  checksum: 10c0/2268218faa02ecfb07819f6fb73426bf32049a3769ee6b1d1be46bdd3fb913ff14518692213a762a1ceccf6245572a5600052572f50b02c201e388475427657a
+  checksum: 10c0/9933ae22ab2faa852d8a941bdbb427c98d160b253f2977f10aad7024cd725fbca56d36a22560f3c75f8716b3d6651a599fa6d996cb131315c997242206cc4ebb
   languageName: node
   linkType: hard
 
@@ -10967,7 +10967,7 @@ __metadata:
     "@babel/core": "npm:^7.28.3"
     "@eslint/js": "npm:^9.33.0"
     "@ianvs/prettier-plugin-sort-imports": "npm:^4.6.2"
-    "@mantine/core": "npm:8.2.5"
+    "@mantine/core": "npm:8.2.8"
     "@mantine/hooks": "npm:8.2.5"
     "@mantine/notifications": "npm:^8.2.5"
     "@next/bundle-analyzer": "npm:^15.4.7"
