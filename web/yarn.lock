@@ -3782,15 +3782,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook-community/storybook-dark-mode@npm:^5.6.0":
-  version: 5.6.0
-  resolution: "@storybook-community/storybook-dark-mode@npm:5.6.0"
+"@storybook-community/storybook-dark-mode@npm:^6.0.7":
+  version: 6.0.7
+  resolution: "@storybook-community/storybook-dark-mode@npm:6.0.7"
   dependencies:
     "@storybook/icons": "npm:^1.4.0"
     fast-deep-equal: "npm:^3.1.3"
   peerDependencies:
+    "@storybook/addon-docs": ^9.0.18
     storybook: ^9.0.18
-  checksum: 10c0/d68f2449c72d800e070df96b0cb4d1acf9112d6d20d0dc5ce93dbec1b6f12b751cc05e2518f43186dc01365635833587c7cc83a8c2b6985c9ff97889703befdd
+  peerDependenciesMeta:
+    "@storybook/addon-docs":
+      optional: true
+  checksum: 10c0/e67d3c68fc8aa0ed95b8aa1f2988ab338e0ddd8aeb8aab62297b8ef8a3227b809f3026c9879702db5007643b7972fa942817f05dae7ee3a8e235129b1cf11c24
   languageName: node
   linkType: hard
 
@@ -10972,7 +10976,7 @@ __metadata:
     "@mantine/notifications": "npm:^8.2.5"
     "@next/bundle-analyzer": "npm:^15.4.7"
     "@next/third-parties": "npm:15.4.7"
-    "@storybook-community/storybook-dark-mode": "npm:^5.6.0"
+    "@storybook-community/storybook-dark-mode": "npm:^6.0.7"
     "@storybook/addon-docs": "npm:^9.1.2"
     "@storybook/nextjs": "npm:^9.1.2"
     "@storybook/react": "npm:^9.1.2"
