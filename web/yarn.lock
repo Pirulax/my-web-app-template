@@ -3501,12 +3501,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/hooks@npm:8.2.5":
-  version: 8.2.5
-  resolution: "@mantine/hooks@npm:8.2.5"
+"@mantine/hooks@npm:8.3.4":
+  version: 8.3.4
+  resolution: "@mantine/hooks@npm:8.3.4"
   peerDependencies:
     react: ^18.x || ^19.x
-  checksum: 10c0/acd6d56703b19032ecced897c26dfb5ee7ff630c51cccfcaa2a9fa3251607432be0e984c8f8715456b4fa0c6647d48b4c240aa72d5eed78dbc358ec445b1f791
+  checksum: 10c0/5ec0c45a615a6673aa2597702809cc9d23885b986cf383f07f15f76831f2ac5f34933a44aada2b11361c5ede0f5c9496b550269258a3e3d12395541cd4d27aea
   languageName: node
   linkType: hard
 
@@ -10968,7 +10968,7 @@ __metadata:
     "@eslint/js": "npm:^9.33.0"
     "@ianvs/prettier-plugin-sort-imports": "npm:^4.6.2"
     "@mantine/core": "npm:8.2.5"
-    "@mantine/hooks": "npm:8.2.5"
+    "@mantine/hooks": "npm:8.3.4"
     "@mantine/notifications": "npm:^8.2.5"
     "@next/bundle-analyzer": "npm:^15.4.7"
     "@next/third-parties": "npm:15.4.7"
