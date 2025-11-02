@@ -1,30 +1,24 @@
-import { Stack } from '@mantine/core';
-import { LinksGroup } from '../LinksGroup/LinksGroup';
+'use client';
 
-type Page = {
-  icon: React.FC<any>;
-  tkey: string;
-  href: string;
-};
+import {
+  IconHome2
+} from '@tabler/icons-react';
+import { useTranslations } from 'next-intl';
+import { NavItemLabel } from './NavItemLabel';
+import { NavLink } from './NavLink/NavLink';
 
-type PageGroup = {
-  icon: React.FC<any>;
-  tkey: string;
-  links: Page[];
-};
+export type NavbarProps = {};
 
-export function Navbar(props : {
-  pages: (Page | PageGroup)[];
-}) {
+export const Navbar = (props: NavbarProps) => {
+  const t = useTranslations();
   return (
     <>
-      <div style={{flex: 1}}>
-        <Stack justify="center" gap={0}>
-          {props.pages.map((item) => (
-            <LinksGroup {...item} key={item.tkey} />)
-          )}
-        </Stack>
-      </div>
+      <NavLink p="xs" href="/">
+        <NavItemLabel
+          icon={<IconHome2 size={18} />}
+          label={t('Pages.Home.Label')}
+        />
+      </NavLink>
     </>
   );
-}
+};

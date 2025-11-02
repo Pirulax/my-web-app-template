@@ -1,0 +1,3 @@
+.container[data-hide-if-empty]:has(.collapse:empty) {
+  display: none;
+}

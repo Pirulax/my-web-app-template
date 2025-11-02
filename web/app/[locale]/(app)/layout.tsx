@@ -5,16 +5,7 @@ import { Navbar } from "@/components/Navbar/Navbar";
 import { ZIndex } from "@/zindex";
 import { AppShell, AppShellHeader, AppShellMain, AppShellNavbar } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { IconHome2 } from "@tabler/icons-react";
 import { PropsWithChildren } from "react";
-
-const PAGES = [
-  {
-    icon: IconHome2,
-    tkey: 'Pages.Home',
-    href: '/',
-  },
-];
 
 export default ({ children }: PropsWithChildren<{}>) => {
   const [opened, { toggle }] = useDisclosure(false);
@@ -27,7 +18,7 @@ export default ({ children }: PropsWithChildren<{}>) => {
         <Header withNav isNavOpen={opened} onNavToggle={toggle} />
       </AppShellHeader>
       <AppShellNavbar zIndex={ZIndex.NAVBAR}>
-        <Navbar pages={PAGES} />
+        <Navbar />
       </AppShellNavbar>
       <AppShellMain>
         {children}
