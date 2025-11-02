@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Text, Combobox } from '@mantine/core';
-import { useLocale } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
+import { useLocale } from 'next-intl';
+import { Combobox, Text } from '@mantine/core';
 import { Locale, routing, usePathname, useRouter } from '@/lib/next-intl/routing';
 import { ButtonSelect } from '../ButtonSelect';
 
@@ -25,10 +25,7 @@ export function LocalePicker() {
       items={[...routing.locales]}
       onSelect={(locale: Locale) => {
         setSelected(locale);
-        router.replace(
-          `${pathname}?${params?.toString() ?? ''}`,
-          { locale }
-        );
+        router.replace(`${pathname}?${params?.toString() ?? ''}`, { locale });
       }}
     >
       {routing.locales.map((locale) => (

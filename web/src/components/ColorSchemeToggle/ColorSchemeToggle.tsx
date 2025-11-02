@@ -1,13 +1,13 @@
 'use client';
 
+import { IconMoon, IconSun } from '@tabler/icons-react';
 import cx from 'clsx';
 import {
-  useMantineColorScheme,
-  useComputedColorScheme,
   Group,
   UnstyledButton,
+  useComputedColorScheme,
+  useMantineColorScheme,
 } from '@mantine/core';
-import { IconSun, IconMoon } from '@tabler/icons-react';
 import classes from './ColorSchemeToggle.module.css';
 
 export function ColorSchemeToggle() {

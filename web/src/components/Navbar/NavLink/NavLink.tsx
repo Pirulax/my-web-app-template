@@ -1,9 +1,9 @@
 'use client';
 
 import type { ElementProps } from '@mantine/core';
+import { Link } from '@/lib/next-intl/routing';
 import type { NavItemProps } from '../NavItem';
 import { NavItem } from '../NavItem';
-import { Link } from '@/lib/next-intl/routing';
 
 export interface NavLinkProps extends Omit<ElementProps<typeof Link>, 'children'>, NavItemProps {}
 

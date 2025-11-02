@@ -1,6 +1,6 @@
+import { NextRequest, ProxyConfig } from 'next/server';
 import createNextIntlMiddleware from 'next-intl/middleware';
-import { NextRequest, ProxyConfig } from "next/server";
-import { routing } from "./lib/next-intl/routing";
+import { routing } from './lib/next-intl/routing';
 
 const i18nMiddleware = createNextIntlMiddleware(routing);
 

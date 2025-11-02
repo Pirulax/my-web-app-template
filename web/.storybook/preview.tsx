@@ -1,24 +1,24 @@
 import '@mantine/core/styles.css';
 
-import { MantineProvider } from "../src/lib/mantine/MantineProvider";
 import React, { useEffect } from 'react';
-import { addons } from 'storybook/preview-api';
 import { DARK_MODE_EVENT_NAME } from '@storybook-community/storybook-dark-mode';
-import { useMantineColorScheme } from '@mantine/core';
-import nextIntl from './next-intl';
 import { Preview } from '@storybook/nextjs';
+import { addons } from 'storybook/preview-api';
+import { useMantineColorScheme } from '@mantine/core';
+import { MantineProvider } from '../src/lib/mantine/MantineProvider';
+import nextIntl from './next-intl';
 
 const preview: Preview = {
-    initialGlobals: {
-        locale: 'en',
-        locales: {
-            en: 'English',
-            rs: 'Srpski',
-        },
+  initialGlobals: {
+    locale: 'en',
+    locales: {
+      en: 'English',
+      rs: 'Srpski',
     },
-    parameters: {
-      nextIntl,
-    },
+  },
+  parameters: {
+    nextIntl,
+  },
 };
 export default preview;
 

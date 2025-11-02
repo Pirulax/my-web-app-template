@@ -1,10 +1,10 @@
 'use client';
 
-import { Header } from "@/components/Header";
-import { Navbar } from "@/components/Navbar/Navbar";
-import { ZIndex } from "@/zindex";
-import { AppShell, AppShellHeader, AppShellMain, AppShellNavbar } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
+import { AppShell, AppShellHeader, AppShellMain, AppShellNavbar } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
+import { Header } from '@/components/Header';
+import { Navbar } from '@/components/Navbar/Navbar';
+import { ZIndex } from '@/zindex';
 
 export default ({ children }: LayoutProps<'/[locale]'>) => {
   const [opened, { toggle }] = useDisclosure(false);
@@ -19,9 +19,7 @@ export default ({ children }: LayoutProps<'/[locale]'>) => {
       <AppShellNavbar zIndex={ZIndex.NAVBAR}>
         <Navbar />
       </AppShellNavbar>
-      <AppShellMain>
-        {children}
-      </AppShellMain>
+      <AppShellMain>{children}</AppShellMain>
     </AppShell>
-  )
+  );
 };
