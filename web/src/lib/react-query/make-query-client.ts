@@ -1,8 +1,5 @@
-import {
-  QueryClient,
-  defaultShouldDehydrateQuery,
-  isServer,
-} from '@tanstack/react-query'
+import { defaultShouldDehydrateQuery, isServer, QueryClient } from '@tanstack/react-query';
+import SuperJSON from 'superjson';
 
 export function makeQueryClient() {
   return new QueryClient({
@@ -14,7 +11,11 @@ export function makeQueryClient() {
         throwOnError: true,
         retry: 1,
       },
+      mutations: {
+        throwOnError: false,
+      },
       dehydrate: {
+        serializeData: SuperJSON.serialize,
         // include pending queries in dehydration (See https://tanstack.com/query/latest/docs/framework/react/guides/advanced-ssr#streaming-with-server-components)
         shouldDehydrateQuery: (query) =>
           defaultShouldDehydrateQuery(query) || query.state.status === 'pending',
@@ -24,17 +25,12 @@ export function makeQueryClient() {
           // so we cannot redact them.
           // Next.js also automatically redacts errors for us
           // with better digests.
-          return false
+          return false;
         },
       },
+      hydrate: {
+        deserializeData: SuperJSON.deserialize,
+      },
     },
-  })
-}
-
-let qc : QueryClient | undefined = undefined
-export function getQueryClient() {
-  if (isServer) {
-    return makeQueryClient();
-  }
-  return (qc ??= makeQueryClient()); // Get or make QueryClient if not already created
+  });
 }

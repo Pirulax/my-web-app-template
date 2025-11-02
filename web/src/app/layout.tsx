@@ -1,15 +1,15 @@
 import '@mantine/core/styles.css';
 import '@mantine/notifications/styles.css';
 
-import { ReactQueryProvider } from '@/providers/ReactQueryProvider';
 import { theme } from '@/theme';
 import { ColorSchemeScript, LoadingOverlay, MantineProvider } from '@mantine/core';
 import { Notifications } from '@mantine/notifications';
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 import { PropsWithChildren, Suspense } from 'react';
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { ReactQueryProvider } from '@/lib/react-query/ReactQueryProvider';
+import { makeQueryClient } from '@/lib/react-query/make-query-client';
+import { NextIntlProvider } from '@/lib/next-intl/NextIntlProvider';
 
 const { GOOGLE_ANALYTICS_ID } = process.env;
 
@@ -32,8 +32,8 @@ export default async function RootLayout({
       </head>
       <body>
         <MantineProvider theme={theme} defaultColorScheme="light">   
-          <NextIntlClientProvider messages={await getMessages()}> {/* May be worth caching this in a top level variable in production? */}
-            <ReactQueryProvider>
+          <NextIntlProvider>
+            <ReactQueryProvider client={makeQueryClient()}>
               <Notifications position="top-center" />
               <NuqsAdapter>
                 <Suspense fallback={ // Suspense boundary should be as deep as possible (As state of children is lost when suspending)
@@ -47,7 +47,7 @@ export default async function RootLayout({
                 </Suspense>
               </NuqsAdapter>
             </ReactQueryProvider>
-          </NextIntlClientProvider>
+          </NextIntlProvider>
         </MantineProvider>
       </body>
       {GOOGLE_ANALYTICS_ID && <GoogleAnalytics gaId={GOOGLE_ANALYTICS_ID} debugMode={process.env.NODE_ENV === 'development'} />}

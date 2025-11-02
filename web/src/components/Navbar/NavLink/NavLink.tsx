@@ -3,7 +3,7 @@
 import type { ElementProps } from '@mantine/core';
 import type { NavItemProps } from '../NavItem';
 import { NavItem } from '../NavItem';
-import { Link } from '@/i18n/routing';
+import { Link } from '@/lib/next-intl/routing';
 
 export interface NavLinkProps extends Omit<ElementProps<typeof Link>, 'children'>, NavItemProps {}
 

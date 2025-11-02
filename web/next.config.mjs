@@ -5,7 +5,7 @@ const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
 });
 
-const withNextIntl = createNextIntlPlugin();
+const withNextIntl = createNextIntlPlugin('./src/lib/i18n/request.ts');
 
 /** @type {import('next').NextConfig} */
 const config = {
