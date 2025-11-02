@@ -4,7 +4,7 @@ import '@mantine/notifications/styles.css';
 import { ColorSchemeScript, LoadingOverlay } from '@mantine/core';
 import { Notifications } from '@mantine/notifications';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
-import { PropsWithChildren, Suspense } from 'react';
+import { Suspense } from 'react';
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { ReactQueryProvider } from '@/lib/react-query/ReactQueryProvider';
 import { makeQueryClient } from '@/lib/react-query/make-query-client';
@@ -16,9 +16,7 @@ const { GOOGLE_ANALYTICS_ID } = process.env;
 export default async function RootLayout({
   children,
   params,
-}: PropsWithChildren<{
-  params: Promise<{ locale: string }>
-}>) {
+}: LayoutProps<'/[locale]'>) {
   const { locale } = await params;
   return (
     <html lang={locale} suppressHydrationWarning>

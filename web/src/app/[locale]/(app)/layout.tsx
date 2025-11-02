@@ -5,9 +5,8 @@ import { Navbar } from "@/components/Navbar/Navbar";
 import { ZIndex } from "@/zindex";
 import { AppShell, AppShellHeader, AppShellMain, AppShellNavbar } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { PropsWithChildren } from "react";
 
-export default ({ children }: PropsWithChildren<{}>) => {
+export default ({ children }: LayoutProps<'/[locale]'>) => {
   const [opened, { toggle }] = useDisclosure(false);
   return (
     <AppShell
