@@ -22,6 +22,9 @@ const config = {
     '^./(?!.*.css$).*$',
     '\\.css$',
   ],
+  endOfLine: 'auto',
+  experimentalTernaries: true,
+  experimentalOperatorPosition: "start",
   overrides: [
     {
       files: '*.mdx',

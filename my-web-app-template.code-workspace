@@ -13,7 +13,8 @@
     "files.associations": {
       "**/docker-compose/*.*": "dockercompose"
     },
-    /** Use LF instead of CRLF */
-    "files.eol": "\n"
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit"
+    },
   }
 }
