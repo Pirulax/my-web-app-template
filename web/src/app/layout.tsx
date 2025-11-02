@@ -1,8 +1,7 @@
 import '@mantine/core/styles.css';
 import '@mantine/notifications/styles.css';
 
-import { theme } from '@/theme';
-import { ColorSchemeScript, LoadingOverlay, MantineProvider } from '@mantine/core';
+import { ColorSchemeScript, LoadingOverlay } from '@mantine/core';
 import { Notifications } from '@mantine/notifications';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 import { PropsWithChildren, Suspense } from 'react';
@@ -10,6 +9,7 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 import { ReactQueryProvider } from '@/lib/react-query/ReactQueryProvider';
 import { makeQueryClient } from '@/lib/react-query/make-query-client';
 import { NextIntlProvider } from '@/lib/next-intl/NextIntlProvider';
+import { MantineProvider } from '@/lib/mantine/MantineProvider';
 
 const { GOOGLE_ANALYTICS_ID } = process.env;
 
@@ -31,7 +31,7 @@ export default async function RootLayout({
         />
       </head>
       <body>
-        <MantineProvider theme={theme} defaultColorScheme="light">   
+        <MantineProvider>
           <NextIntlProvider>
             <ReactQueryProvider client={makeQueryClient()}>
               <Notifications position="top-center" />
