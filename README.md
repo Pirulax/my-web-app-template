@@ -31,5 +31,4 @@ So, first of all, the repo must be imported:
 
 ### Set up CI/CD
 To properly setup ci/cd you must:
-- Make sure `image` in `docker-compose/base.yml` (and others) is correct, eg.: change `ghcr.io/pirulax/my-web-app-template-web:latest` to `ghcr.io/your-name/my-awesome-app-web:latest`
 - Set the Portainer webhook URL secret in the repo's secerts (Settings->Security->Secrets and variables, key is `PORTAINER_WEBHOOK_URL`)

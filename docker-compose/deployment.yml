@@ -3,4 +3,7 @@
 
 services:
   web:
-    image: 'ghcr.io/pirulax/my-web-app-template-web:latest'
+    build:
+      context: ../web
+      dockerfile: Dockerfile
+      target: prod

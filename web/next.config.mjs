@@ -5,11 +5,10 @@ const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
 });
 
-const withNextIntl = createNextIntlPlugin('./src/lib/i18n/request.ts');
+const withNextIntl = createNextIntlPlugin('./src/lib/next-intl/request.ts');
 
 /** @type {import('next').NextConfig} */
 const config = {
-  output: 'standalone',
   reactStrictMode: true,
   eslint: {
     ignoreDuringBuilds: true,
