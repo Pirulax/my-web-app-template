@@ -19,8 +19,4 @@ const config: NextConfig = {
   },
 };
 
-export default withBundleAnalyzer(
-  withNextIntl(
-    config
-  )
-);
+export default withBundleAnalyzer(withNextIntl(config));

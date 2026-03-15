@@ -1,10 +1,10 @@
-import { NextRequest, ProxyConfig } from 'next/server';
+import type { NextRequest, ProxyConfig } from 'next/server';
 import createNextIntlMiddleware from 'next-intl/middleware';
 import { routing } from './lib/next-intl/routing';
 
 const i18nMiddleware = createNextIntlMiddleware(routing);
 
-export default async (req: NextRequest) => {
+export default (req: NextRequest) => {
   return i18nMiddleware(req);
 };
 

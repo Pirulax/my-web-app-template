@@ -1,5 +1,6 @@
-import { ReactNode } from 'react';
-import { Combobox, ComboboxProps, UnstyledButton, useCombobox } from '@mantine/core';
+import type { ReactNode } from 'react';
+import type { ComboboxProps } from '@mantine/core';
+import { Combobox, UnstyledButton, useCombobox } from '@mantine/core';
 
 export interface ButtonSelectProps<T> extends Omit<ComboboxProps, 'store' | 'onOptionSubmit'> {
   onSelect: (item: T) => void;
