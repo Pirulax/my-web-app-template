@@ -60,6 +60,7 @@
     "eslint-plugin-react": "^7.37.5",
     "jest": "^30.3.0",
     "jest-environment-jsdom": "30.3.0",
+    "jiti": "^2.6.1",
     "postcss": "^8.5.8",
     "postcss-preset-mantine": "1.18.0",
     "postcss-simple-vars": "^7.0.1",
