@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useLocale } from 'next-intl';
 import { Combobox, Text } from '@mantine/core';
-import { Locale, routing, usePathname, useRouter } from '@/lib/next-intl/routing';
+import type { Locale } from '@/lib/next-intl/routing';
+import { routing, usePathname, useRouter } from '@/lib/next-intl/routing';
 import { ButtonSelect } from '../ButtonSelect';
 
 const LOCALE_NAMES = {

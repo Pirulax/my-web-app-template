@@ -1,4 +1,4 @@
-import { defaultShouldDehydrateQuery, isServer, QueryClient } from '@tanstack/react-query';
+import { defaultShouldDehydrateQuery, QueryClient } from '@tanstack/react-query';
 import SuperJSON from 'superjson';
 
 export function makeQueryClient() {
@@ -19,7 +19,7 @@ export function makeQueryClient() {
         // include pending queries in dehydration (See https://tanstack.com/query/latest/docs/framework/react/guides/advanced-ssr#streaming-with-server-components)
         shouldDehydrateQuery: (query) =>
           defaultShouldDehydrateQuery(query) || query.state.status === 'pending',
-        shouldRedactErrors: (error) => {
+        shouldRedactErrors: () => {
           // We should not catch Next.js server errors
           // as that's how Next.js detects dynamic pages
           // so we cannot redact them.

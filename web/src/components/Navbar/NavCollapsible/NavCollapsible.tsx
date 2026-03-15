@@ -4,7 +4,7 @@ import type { PropsWithChildren } from 'react';
 import React, { useMemo, useState, type ReactNode } from 'react';
 import { IconChevronRight } from '@tabler/icons-react';
 import clsx from 'clsx';
-import { Box, Collapse, Container, Flex, rem, Stack, UnstyledButton } from '@mantine/core';
+import { Box, Collapse, Flex, rem, Stack, UnstyledButton } from '@mantine/core';
 import { NavCollapsibleContextProvider } from './NavCollapsibleContext';
 import common from '../common.module.css';
 import classes from './NavCollapsible.module.css';

@@ -7,7 +7,7 @@ import { NavLink } from './NavLink/NavLink';
 
 export type NavbarProps = {};
 
-export const Navbar = (props: NavbarProps) => {
+export const Navbar = (_props: NavbarProps) => {
   const t = useTranslations();
   return (
     <>
