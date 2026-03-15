@@ -11134,6 +11134,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jiti@npm:^2.6.1":
+  version: 2.6.1
+  resolution: "jiti@npm:2.6.1"
+  bin:
+    jiti: lib/jiti-cli.mjs
+  checksum: 10c0/79b2e96a8e623f66c1b703b98ec1b8be4500e1d217e09b09e343471bbb9c105381b83edbb979d01cef18318cc45ce6e153571b6c83122170eefa531c64b6789b
+  languageName: node
+  linkType: hard
+
 "js-tokens@npm:^3.0.0 || ^4.0.0, js-tokens@npm:^4.0.0":
   version: 4.0.0
   resolution: "js-tokens@npm:4.0.0"
@@ -11976,6 +11985,7 @@ __metadata:
     eslint-plugin-react: "npm:^7.37.5"
     jest: "npm:^30.3.0"
     jest-environment-jsdom: "npm:30.3.0"
+    jiti: "npm:^2.6.1"
     next: "npm:16.1.6"
     next-intl: "npm:^4.8.3"
     nuqs: "npm:^2.8.9"

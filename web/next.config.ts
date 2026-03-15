@@ -1,3 +1,4 @@
+import type { NextConfig } from 'next';
 import bundleAnalyzer from '@next/bundle-analyzer';
 import createNextIntlPlugin from 'next-intl/plugin';
 
@@ -7,12 +8,8 @@ const withBundleAnalyzer = bundleAnalyzer({
 
 const withNextIntl = createNextIntlPlugin('./src/lib/next-intl/request.ts');
 
-/** @type {import('next').NextConfig} */
-const config = {
+const config: NextConfig = {
   reactStrictMode: true,
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   experimental: {
     optimizePackageImports: ['@mantine/core', '@mantine/hooks'],
   },
