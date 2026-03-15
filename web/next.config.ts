@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next';
+import fs from 'fs';
 import bundleAnalyzer from '@next/bundle-analyzer';
 import createNextIntlPlugin from 'next-intl/plugin';
 
@@ -14,8 +15,9 @@ const config: NextConfig = {
     optimizePackageImports: ['@mantine/core', '@mantine/hooks'],
   },
   env: {
-    BUILD_DATE: new Date().toISOString(),
-    BUILD_GITHUB_SHA: process.env.GITHUB_SHA,
+    NEXT_PUBLIC_BUILD_DATE: new Date().toISOString(),
+    NEXT_PUBLIC_VERSION:
+      fs.readFileSync('./VERSION', 'utf-8').trim().replace('web/', '') || '0.0.0',
   },
 };
 
