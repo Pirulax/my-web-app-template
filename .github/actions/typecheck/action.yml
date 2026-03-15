@@ -1,0 +1,30 @@
+#
+# Run typecheck for `web`
+#
+
+name: Typecheck
+description: Run code typecheck in the current directory
+
+inputs:
+  project:
+    description: The project to run typecheck for - The name of it is assumed to also be the sub-folder's name
+    required: false
+    default: '.'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Prepare yarn
+      shell: bash
+      working-directory: ${{ inputs.project }}
+      run: corepack enable && corepack prepare
+
+    - name: Install dependencies
+      shell: bash
+      working-directory: ${{ inputs.project }}
+      run: yarn install
+
+    - name: Run typecheck
+      shell: bash
+      working-directory: ${{ inputs.project }}
+      run: yarn typecheck

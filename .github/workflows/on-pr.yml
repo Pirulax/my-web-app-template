@@ -1,0 +1,22 @@
+name: Pull request workflow
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  typecheck:
+    name: Run code typecheck
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [web]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Run typecheck
+        uses: ./.github/actions/typecheck
+        with:
+          project: ./${{ matrix.project }}
