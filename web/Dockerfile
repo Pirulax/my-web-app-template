@@ -1,7 +1,7 @@
 # syntax = docker/dockerfile:1
 # Source: https://calvinf.com/blog/2023/11/10/node-js-20-yarn-4-and-next-js-on-docker/
 
-FROM node:24.9-alpine AS base
+FROM node:25.8-alpine AS base
 
 ARG GITHUB_SHA
 ENV GITHUB_SHA=${GITHUB_SHA}
@@ -23,8 +23,11 @@ RUN adduser --system --uid 1001 nextjs
 FROM base AS deps
 WORKDIR /app
 
+# Copy only the files necessary to install dependencies, to leverage Docker cache
 COPY package.json yarn.lock .yarnrc.yml ./
-RUN corepack enable && corepack prepare
+
+# Install & enable corepack
+RUN npm i -g -f corepack && corepack enable && corepack prepare
 
 RUN yarn install --immutable
 
