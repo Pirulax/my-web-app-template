@@ -23,8 +23,8 @@ runs:
       uses: actions/cache@v6
       id: cache-deps
       with:
-        path: node_modules
-        key: deps-${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        path: ${{ inputs.project }}/node_modules
+        key: deps-${{ runner.os }}-yarn-${{ hashFiles('${{ inputs.project }}/yarn.lock') }}
 
     - name: Install dependencies
       if: steps.cache-deps.outputs.cache-hit != 'true'
