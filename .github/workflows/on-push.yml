@@ -56,8 +56,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Trigger Portainer stack update
+      - name: Trigger Komodo deploy webhook
         uses: distributhor/workflow-webhook@v3
         with:
-          webhook_url: ${{ secrets.PORTAINER_WEBHOOK_URL }}
-          timeout: 600 # 10m - Webhook doesn't respond until deployment is done (it can take a few minutes)
+          webhook_url: ${{ vars.DEPLOY_WEBHOOK_URL }}
+          webhook_secret: ${{ secrets.DEPLOY_WEBHOOK_SECRET }}
