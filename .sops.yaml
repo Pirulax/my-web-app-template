@@ -1,0 +1,7 @@
+creation_rules:
+  - path_regex: \.enc\.env$
+    output_type: dotenv
+    input_type: dotenv
+    age: 
+      - age18p0jge3hs23v4l59tdly5w4ugpu8yw8e8efm87hedtrnzlmk5atsqdlzcx # Pirulax
+      - TODO_GENERATE_KEY # Komodo

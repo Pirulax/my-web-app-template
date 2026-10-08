@@ -1,0 +1,20 @@
+#
+# komodo stack config
+#
+
+[[stack]]
+name = "my-web-app-template"
+
+[stack.config]
+server = "my-web-app-template"
+linked_repo = "my-web-app-template"
+deploy = true
+file_paths = [
+  "./docker-compose/base.yml",
+  "./docker-compose/deployment.yml"
+]
+additional_env_files = []
+# SOPS Integration (See https://github.com/moghtech/komodo/discussions/934#discussioncomment-16542477)
+# This assumes `MY_WEB_APP_TEMPLATE_SOPS_AGE_KEY` is set in `Settings->Variables` in Komodo.
+compose_cmd_wrapper="SOPS_AGE_KEY='[[MY_WEB_APP_TEMPLATE_SOPS_AGE_KEY]]' sops exec-env stack.enc.env '[[COMPOSE_COMMAND]]'"
+compose_cmd_wrapper_include = ["config", "build", "pull", "up"]
