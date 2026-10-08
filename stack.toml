@@ -10,6 +10,7 @@ server = "my-web-app-template"
 linked_repo = "my-web-app-template"
 deploy = true
 run_build = true # must do this due to the web container
+webhook_enabled = true
 webhook_force_deploy = true # seems like komodo won't re-build without this, not sure why
 file_paths = [
   "./docker-compose/base.yml",
