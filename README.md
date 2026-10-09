@@ -34,18 +34,18 @@ Use `prod` instead of `dev` to run the `prod`(uction) version
 This template is meant to be used with Komodo to allow for CD (continous deployment).
 To add this project to Komodo do the following:
 
-- Servers -> Must have a server available (By default it's named after the app, can be changed in `stack.toml`) - Servers must have `sops` installed
+- Servers -> Must have a server available (By default it's named after the app, can be changed in `komodo.toml`) - Servers must have `sops` installed
 - SOPS:
   - Generate age key using `age-keygen`
   - Add the public key to `.sops.yaml`
   - Encrypt `stack.enc.env` file using `sops -i -e stack.enc.env`
   - Komodo -> Settings -> Secrets: Add the generated age key SECRET as `MY_WEB_APP_TEMPLATE_SOPS_AGE_KEY`
 - Repos -> Add Repository
-- Syncs -> Add Sync: Set `Resource Paths` to: `stack.toml`
-- Stacks -> Check force deploy & copy Webhook URL
+- Syncs -> Add Sync: Set `Resource Paths` to: `komodo.toml`
+- Procedures -> my-web-app-template: deploy -> Copy webhook URL (Set branch=master, and by ID instead of name)
 - GitHub -> Settings -> Secrets and variables -> Actions:
   - Add webhook secret as SECRET (copied from Komodo config) as `DEPLOY_WEBHOOK_SECRET`
-  - Add the webhook URL as VARIABLE as `DEPLOY_WEBHOOK_URL`
+  - Add the webhook URL from the previous step as VARIABLE as `DEPLOY_WEBHOOK_URL`
 - Profit
 
 ## npm scripts
