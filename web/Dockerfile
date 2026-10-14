@@ -54,7 +54,7 @@ USER nextjs
 EXPOSE 3000
 
 # Build & start
-CMD ["dumb-init", "./entrypoint.sh"]
+CMD yarn build && exec yarn start
 
 #
 # Development image
