@@ -12021,9 +12021,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"my-web-appt-template@workspace:.":
+"my-web-app-template@workspace:.":
   version: 0.0.0-use.local
-  resolution: "my-web-appt-template@workspace:."
+  resolution: "my-web-app-template@workspace:."
   dependencies:
     "@babel/core": "npm:^7.29.0"
     "@eslint/js": "npm:^9.39.4"
