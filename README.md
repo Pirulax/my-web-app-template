@@ -37,7 +37,7 @@ yarn compose:prod
 
 Updates are handled by Renovate automatically on schedule (can be changed in `renovate.json`).
 Renovate will automatically create a `Dependency Dashboard` issue in your repository, where you can review and manage all dependency updates.
-If not, visit the [dashboard](https://developer.mend.io/github/Pirulax).
+If not, visit the [dashboard](https://developer.mend.io/github/Pirulax), and check the repo (It's likely that Renovate is set to `Silent` instead of `Interactive`).
 
 ## Setup Komodo environment and deployment webhook
 
