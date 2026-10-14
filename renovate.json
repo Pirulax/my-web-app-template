@@ -1,0 +1,30 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    "group:recommended",
+    "docker:pinDigests",
+    "helpers:pinGitHubActionDigestsToSemver"
+  ],
+  "timezone": "Europe/Belgrade",
+  "schedule": [
+    "* 22 * * *"
+  ],
+  "platformAutomerge": false,
+  "automerge": true,
+  "docker-compose": {
+    "managerFilePatterns": [
+      "/^docker-compose\\/[^/]+\\.ya?ml$/"
+    ]
+  },
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["major"],
+      "automerge": false
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "ci dependencies"
+    }
+  ]
+}
