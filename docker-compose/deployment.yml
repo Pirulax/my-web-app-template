@@ -7,3 +7,5 @@ services:
       context: ../web
       dockerfile: Dockerfile
       target: prod
+    ports: # TODO: Set correct ports
+      - 3000:3000
