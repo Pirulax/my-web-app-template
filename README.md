@@ -1,4 +1,4 @@
-### Setup
+## Setup
 
 ##### Git Config
 
@@ -15,21 +15,31 @@ Create the appropriate `.env` files in the project root, eg.:
 - `.env.dev.local`
 - `.env.prod.local`
 
-#### Compose files
+##### Naming
 
 - Find & replace all instances of `my-web-app-template` to your project's name
 
-#### Create images & run
+## Run containers
 
-Use this command to run docker-compose to create & run the (dev) containers
+Use this command to run docker-compose to create & run the containers:
 
 ```sh
-./compose.sh dev build && ./compose.sh dev watch
+yarn compose:dev
 ```
 
-Use `prod` instead of `dev` to run the `prod`(uction) version
+or
 
-### Setup Komodo environment and deployment webhook
+```sh
+yarn compose:prod
+```
+
+## Updating
+
+Updates are handled by Renovate automatically on schedule (can be changed in `renovate.json`).
+Renovate will automatically create a `Dependency Dashboard` issue in your repository, where you can review and manage all dependency updates.
+If not, visit the [dashboard](https://developer.mend.io/github/Pirulax).
+
+## Setup Komodo environment and deployment webhook
 
 This template is meant to be used with Komodo to allow for CD (continous deployment).
 To add this project to Komodo do the following:
@@ -70,7 +80,3 @@ To add this project to Komodo do the following:
 - `storybook` – starts storybook dev server
 - `storybook:build` – build production storybook bundle to `storybook-static`
 - `prettier:write` – formats all files with Prettier
-
-### Updating
-
-To update run: `./update.sh minor && ./update.sh latest`

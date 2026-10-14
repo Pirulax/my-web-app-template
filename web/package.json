@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "compose:dev": "./compose.sh dev build && ./compose.sh dev watch",
+    "compose:prod": "./compose.sh prod build && ./compose.sh prod watch",
     "build": "next build",
     "analyze": "ANALYZE=true next build",
     "start": "next start",
