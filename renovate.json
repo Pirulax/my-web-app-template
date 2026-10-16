@@ -3,6 +3,7 @@
   "extends": [
     "config:recommended",
     "group:recommended",
+    "group:allNonMajor",
     "docker:pinDigests",
     "helpers:pinGitHubActionDigestsToSemver"
   ],
