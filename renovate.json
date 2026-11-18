@@ -5,12 +5,10 @@
     "group:recommended",
     "group:allNonMajor",
     "docker:pinDigests",
-    "helpers:pinGitHubActionDigestsToSemver"
+    "helpers:pinGitHubActionDigestsToSemver",
+    "schedule:nonOfficeHours"
   ],
   "timezone": "Europe/Belgrade",
-  "schedule": [
-    "* 22 * * *"
-  ],
   "platformAutomerge": false,
   "automerge": true,
   "docker-compose": {
@@ -18,13 +16,31 @@
       "/^docker-compose\\/[^/]+\\.ya?ml$/"
     ]
   },
+  "toolSettings": {
+    "nodeMaxMemory": 1024
+  },
+  "minimumReleaseAge": "3 days",
   "packageRules": [
     {
-      "matchUpdateTypes": ["major"],
+      "matchDatasources": [
+        "npm"
+      ],
+      "groupName": "{{packageScope}} packages",
+      "groupSlug": "{{packageScope}}-scope",
+      "matchPackageNames": [
+        "/^@/"
+      ]
+    },
+    {
+      "matchUpdateTypes": [
+        "major"
+      ],
       "automerge": false
     },
     {
-      "matchManagers": ["github-actions"],
+      "matchManagers": [
+        "github-actions"
+      ],
       "groupName": "ci dependencies"
     }
   ]
