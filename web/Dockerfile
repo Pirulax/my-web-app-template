@@ -1,7 +1,7 @@
-# syntax = docker/dockerfile:1
+# syntax = docker/dockerfile:1@sha256:572cebbc2b15e6f84c077742952674889cb63cd5e9b80abdffcbe587b6f19183
 # Source: https://calvinf.com/blog/2023/11/10/node-js-20-yarn-4-and-next-js-on-docker/
 
-FROM node:25.8-alpine AS base
+FROM node:25.8-alpine@sha256:cf38e1f3c28ac9d81cdc0c51d8220320b3b618780e44ef96a39f76f7dbfef023 AS base
 
 ARG GITHUB_SHA
 ENV GITHUB_SHA=${GITHUB_SHA}
